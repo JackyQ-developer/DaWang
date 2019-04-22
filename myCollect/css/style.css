@@ -1,0 +1,221 @@
+.flex-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.4rem 0.4rem;
+}
+.broker-img {
+	width: 1.866667rem;
+	height: 1.866667rem;
+	overflow: hidden;
+	border-radius: 50%;
+}
+.broker-qrcode {
+	width: 2.133333rem;
+	height: 2.133333rem;
+	overflow: hidden;
+}
+.broker-qrcode img {
+	width: 100%;
+	display: block;
+}
+.username {
+	font-size: 0.426667rem;
+	color: #333333;
+}
+.red-rect {
+	display: inline-block;
+	line-height: 0.346667rem;
+	font-size: 0.32rem;
+	color: #f36464;
+	border: 1px solid #f36464;
+	padding: 0.04rem 0.32rem;
+	margin-left: 0.266667rem;
+}
+.flex-around {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+.broker-infolist {
+	font-size: 0.426667rem;
+	color: #333333;
+	line-height: 0.613333rem;
+}
+.broker-infolist p {
+	margin-bottom: 0;
+}
+
+.phone {
+	background-color: #4cd964;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 1.333333rem;
+	height: 1.333333rem;
+	border-radius: 50%;
+	position: fixed;
+	right: 4%;;
+	bottom: 10%;
+	z-index: 2;
+	box-shadow: -4px 4px 16px 0px rgba(0,0,0,.2);
+}
+.phone .icon-dianhua {
+	font-size: 0.666667rem;
+	color: #fff;
+}
+
+/* swiper */
+.swiper-pagination {
+	position: static;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 1.546667rem;
+	background-color: #e4e4e4;
+}
+.brokerDetails-bullet {
+	display: inline-block;
+	width: 38%;
+	line-height: 1.12rem;
+	font-size: 0.426667rem;
+	text-align: center;
+	background-color: #fff;
+	color: #f14f4f;
+	border-radius: 0.266667rem;
+}
+.brokerDetails-active {
+	color: #fff;
+	background-color: #f14f4f;
+}
+
+.nearby-list {
+	position: static;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    overflow: auto;
+    width: auto;
+}
+.nearby {
+	justify-content: flex-start;
+}
+.nearby-address {
+	margin-left: 0.32rem;
+	margin-right: 0.24rem;
+}
+.nearby-nav-container {
+	height: 1.333333rem;
+}
+.nearby-nav {
+	position: fixed;
+	top: 1.333333rem;
+	left: 0;
+	width: 100%;
+	height: 1.333333rem;
+	background-color: #eaebed;
+	z-index: 3;
+	font-size: 0.4rem;
+	color: #666666;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.nearby-nav nav {
+	line-height: 1.333333rem;
+}
+.nearby-nav .iconfont {
+	font-size: 0.266667rem;
+}
+.nearby-nav .swiper-wrapper {
+	height: auto;
+}
+.nearby-nav .swiper-slide {
+	width: auto !important;
+	margin: 0 0.293333rem !important;
+	padding: 0.213333rem 0.4rem;
+	background-color: #fff;
+	color: #f14f4f;
+	border-radius: 0.8rem;
+}
+
+.nearby-list>ul>li {
+	background-color: #fff;
+	color: #000;
+	font-size: 0.333333rem;
+	overflow: hidden;
+	border-bottom: 0.293333rem solid #e4e4e4;
+}
+.nearby-list>ul>li:last-child {
+	border: none;
+}
+.nearby-houseThumb {
+	width: 2.666667rem;
+	height: 2.666667rem;
+	float: left;
+	margin-right: 0.746667rem;
+}
+.nearby-houseInfo {
+	display: flex;
+	height: 2.666667rem;
+	flex-direction: column;
+	justify-content: space-around;
+	white-space: nowrap;
+}
+.nearby-houseInfo h1 {
+	font-size: 0.4rem;
+	font-weight: normal;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.nearby-houseInfo p {
+	margin-bottom: 0;
+	font-size: 0.333333rem;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.tag {
+	display: inline-block;
+	font-size: 0.333333rem;
+	padding: 0.026667rem 0.293333rem;
+	border-radius: 4px;
+	background-color: yellow;
+}
+.tag:first-child {
+	margin-right: 0.266667rem;
+}
+.pink-tag {
+	color: #f14f4f;
+	background-color: #ffe6e6;
+}
+.green-tag {
+	background-color: #e8fff4;
+	color: #17a76f;
+}
+
+.list-padding-container {
+	box-sizing: border-box;
+	max-width: 100%;
+	padding: 0 0.32rem;
+}
+
+.nearby-list h2.list-padding-container {
+	font-size: 0.4rem;
+	color: #333333;
+	border-bottom: 1px solid #e4e4e4;
+	line-height: 1.12rem;
+}
+.list-container li {
+	height: 3.546667rem;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #e4e4e4;
+}
+.list-container li:last-child {
+	border: none;
+}

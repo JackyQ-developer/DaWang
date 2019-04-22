@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>二手房详情</title>
+
+		<!-- 公用部分 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,
+maximum-scale=1,user-scalable=no">
+		<script src="../public/js/Flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.min.css">
+		<script src="../public/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../public/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script src="../public/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+		<script src="../public/js/vue.js" charset="utf-8"></script>
+		<script src="../public/js/public.js" charset="utf-8"></script>
+		<!-- 公用部分 -->
+		
+		<link rel="stylesheet" type="text/css" href="../public/css/animate.css">
+		<link rel="stylesheet" type="text/css" href="../public/css/swiper-4.3.3.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="../public/js/swiper-4.3.3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=TtahsrKIfCHwW9fdbGBmWfoEQCIoF01A"></script>
+		<script type="text/javascript">
+			mui.init({
+				gestureConfig:{
+				   tap: true, //默认为true
+				   doubletap: true, //默认为false
+				   longtap: true, //默认为false
+				   swipe: true, //默认为true
+				   drag: true, //默认为true
+				   hold:true,//默认为true，不监听
+				   release:true//默认为true，不监听
+			  	}
+			})
+		</script>
+	</head>
+
+	<body>
+		<div class="childpage-header-container childpage-header-opacity">
+			<header class="childpage-header">
+				<i class="iconfont icon-guanbi icon-fanhui1" id="back"></i>
+				<!-- <i class="iconfont icon-zhuanfa childpage-header-right" id="share"></i> -->
+			</header>
+		</div>
+		<div id="app" v-cloak>
+			<main>
+				<!-- banner BEGIN -->
+				<div class="swiper-container ndHandHouseDetail-banner">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" v-for="item in img">
+							<img :src="domain+item.url+item.big" alt="">
+						</div>
+					</div>
+					<!-- 如果需要分页器 -->
+					<div class="swiper-pagination"></div>
+				</div>
+				<!-- banner END -->
+
+				
+				<article class="ndHandHouseDetail-article">
+					<h1 class="container-25">{{ title }}</h1>
+
+					<div class="container-25 tag-container" v-if="true">
+						<span class="tag pink-tag">满五唯一</span>
+						<span class="tag green-tag">新上房源</span>
+					</div>
+
+					<div class="container-25 horizontal-ul">
+						<ul>
+							<li>
+								<p class="horizontal-ul-redtext">{{ price }}万元</p>
+								<em class="horizontal-ul-graytext">售价</em>
+							</li>
+							<li class="gray"></li>
+							<li>
+								<p class="horizontal-ul-redtext">{{ area }}㎡</p>
+								<em class="horizontal-ul-graytext">面积</em>
+							</li>
+							<li class="gray"></li>
+							<li>
+								<p class="horizontal-ul-redtext">{{ room }}室{{ hall }}厅{{ guard }}卫</p>
+								<em class="horizontal-ul-graytext">户型</em>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="clearfix container-25 ndHandHouseDetail-info">
+						<ul>
+							<li>单价：{{ parseInt(unit) }}元/平米</li>
+							<li>楼层：{{ floor }}（共{{ total }}层）</li>
+							<li>类型：{{ genreValue }}</li>
+							<li>产权：{{ rightValue }}</li>
+							<!-- <li>首付预算：首付30万元 贷款70万元</li> -->
+						</ul>
+						<ul>
+							<li>朝向：{{ directionValue }}</li>
+							<li>装修：{{ decorateValue }}</li>
+							<li>电梯：{{ elevator==1?'有':'无' }}</li>
+							<li>年代：{{ age }}年</li>
+						</ul>
+					</div>
+					
+					<!-- 地图 -->
+					<div class="ndHandHouseDetail-map">
+						<h2 class="container-25">
+							<span>{{ longAndLat.area_name }}</span>
+							<em @click="areaDetance(longAndLat.area_id)">小区详情<i class="iconfont icon-qianjinjiantou"></i></em>
+						</h2>
+						<p class="container-25">区域：{{ longAndLat.district }}  {{ longAndLat.row }}</p>
+						<div class="map-container" id="map-container" @click="mapDetail(longAndLat.dimen,longAndLat.longitude,longAndLat.area_name)">地图加载中···</div>
+					</div>
+					<hr class="gray-hr">
+					<!-- 地图 -->
+
+					<!-- 简介 -->
+					<div class="ndHandHouseDetail-map">
+						<h2 class="container-25">
+							<span>房源介绍</span>
+							<!-- <em>小区详情<i class="iconfont icon-qianjinjiantou"></i></em> -->
+						</h2>
+						<div class="container-25 ndHandHouseDetail-houseDetail">
+							{{ describe }}
+						</div>
+						<!-- <div class="ndHandHouseDetail-hideBox">
+							展开全部
+							<i class="iconfont icon-xia"></i>
+						</div> -->
+					</div>
+					<hr class="gray-hr">
+					<!-- 简介 -->
+
+					<!-- 经纪人资料 -->
+					<div class="ndHandHouseDetail-map ndHandHouseDetail-people-container" v-show="identity==2">
+						<h2 class="container-25">
+							<span>经纪人</span>
+							<i class="iconfont icon-qianjinjiantou"></i>
+						</h2>
+
+						<div class="clearfix container-25 ndHandHouseDetail-people" @click="brokerDetail(userInfo.user_id)">
+							<div class="ndHandHouseDetail-people-img">
+								<img :src="domain+userInfo.avatar" alt="">
+							</div>
+							<ul>
+								<li>{{ name }}</li>
+								<li>我已对房屋进行实勘</li>
+							</ul>
+						</div>
+						
+						<!-- 横向列表 -->
+						<div class="container-25 horizontal-ul">
+							<ul>
+								<li>
+									<p class="horizontal-ul-redtext">{{ userInfo.band7 }}</p>
+									<em class="horizontal-ul-graytext">近7日带看次数</em>
+								</li>
+								<li class="gray"></li>
+								<li>
+									<p class="horizontal-ul-redtext">{{ userInfo.band30 }}</p>
+									<em class="horizontal-ul-graytext">近30日带看次数</em>
+								</li>
+								<li class="gray"></li>
+								<li>
+									<p class="horizontal-ul-redtext">{{ userInfo.collect }}</p>
+									<em class="horizontal-ul-graytext">关注本房源人数</em>
+								</li>
+							</ul>
+						</div>
+						<!-- 横向列表 -->
+						
+						<!-- 经纪人带看反馈 -->
+						<!-- <h2 class="container-25">
+							<span>经纪人带看反馈</span>
+							<i class="iconfont icon-qianjinjiantou"></i>
+						</h2>
+						<div class="container-25 ndHandHouseDetail-feedback">
+							<p>此房屋目前是本小区比较价格优惠的房源、两居室户型好、价钱还可以再商量  看房方便、公司有钥匙业主换购更大的房子</p>
+						</div> -->
+						<!-- 经纪人带看反馈 -->
+					</div>
+					<hr class="gray-hr" v-show="identity==2"/>
+					<!-- 经纪人资料 -->
+
+					<!-- 同小区房源 -->
+					<div class="ndHandHouseDetail-map" style="padding-bottom: 0.453333rem;">
+						<h2 class="container-25">
+							<span>同小区房源</span>
+							<i class="iconfont icon-qianjinjiantou"></i>
+						</h2>
+
+						<!-- banner BEGIN -->
+						<div class="swiper-container ndHandHouseDetail-sameVillage">
+							<div class="swiper-wrapper recommends">
+								<div class="swiper-slide recommend" v-for="item in sameType" :data-id="item.houseId">
+									<div>
+										<img :src="domain+item.url+item.thumb" alt="">
+									</div>
+									<p>
+										{{ item.village }}
+									</p>
+									<p>
+										{{ item.area }}㎡/{{ item.room }}
+									</p>
+								</div>
+							</div>
+							<!-- 如果需要分页器 -->
+							<div class="swiper-pagination"></div>
+						</div>
+						<!-- banner END -->
+
+					</div>
+					<hr class="gray-hr" style="height: 1px;">
+					<!-- 同小区房源 -->
+
+					<!-- 推荐房源 -->
+					<div class="ndHandHouseDetail-map" style="padding-bottom: 0.453333rem;">
+						<h2 class="container-25">
+							<span>推荐房源</span>
+							<i class="iconfont icon-qianjinjiantou"></i>
+						</h2>
+
+						<!-- banner BEGIN -->
+						<div class="swiper-container ndHandHouseDetail-sameVillage">
+							<div class="swiper-wrapper recommends">
+								<div class="swiper-slide recommend" v-for="item in local" :data-id="item.houseId">
+									<div>
+										<img :src="domain+item.url+item.thumb" alt="">
+									</div>
+									<p>
+										{{ item.village }}
+									</p>
+									<p>
+										{{ item.area }}㎡/{{ item.room }}
+									</p>
+								</div>
+							</div>
+							<!-- 如果需要分页器 -->
+							<div class="swiper-pagination"></div>
+						</div>
+						<!-- banner END -->
+
+					</div>
+					<hr class="gray-hr" style="height: 1.333333rem;">
+					<!-- 推荐房源 -->
+				</article>
+			</main>
+
+			<footer class="ndHandHouseDetail-footer">
+				<nav class="ndHandHouseDetail-footer-collect" @click="collectFunc">
+					<i :class="collectStatus"></i>
+					<span>收藏</span>
+				</nav>
+				<nav class="ndHandHouseDetail-footer-chat" @click="message(userInfo.user_id)">
+					<i class="iconfont icon-zixun"></i>
+					<span>微聊</span>
+				</nav>
+				<nav class="ndHandHouseDetail-footer-phone" @click="call">
+					<i class="iconfont icon-guanzhu"></i>
+					<span>预约看房</span>
+				</nav>
+			</footer>
+		</div>
+
+		<script src="./js/2ndHandHouseDetail.js" charset="utf-8"></script>
+	</body>
+</html>

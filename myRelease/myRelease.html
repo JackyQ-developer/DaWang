@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>我的发布</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- 公用部分 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,
+maximum-scale=1,user-scalable=no">
+		<script src="../public/js/Flexible.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../public/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script src="../public/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+		<script src="../public/js/vue.js" charset="utf-8"></script>
+		<script src="../public/js/public.js" charset="utf-8"></script>
+		<!-- 公用部分 -->
+
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/swiper-4.3.3.min.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/style.css" />
+		<script src="../public/js/swiper-4.3.3.min.js" charset="utf-8"></script>
+		<script src="../public/js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			html,
+			body {
+				background-color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="childpage-header-container" style="border-bottom: 0.24rem solid #e4e4e4;height: 1.573333rem;">
+			<header class="childpage-header">
+				<i class="iconfont icon-guanbi icon-fanhui1" id="back"></i>
+				<div class="childpage-header-title">
+					我的发布
+				</div>
+			</header>
+		</div>
+	<div id="app" v-cloak>
+		<ul class="searchList">
+			<li data-type="1" class="active">
+				<span>二手房</span>
+				<span>{{ count.count1 }}</span>
+			</li>
+			<li data-type="2">
+				<span>租房</span>
+				<span>{{ count.count2 }}</span>
+			</li>
+			<li data-type="3">
+				<span>商用房</span>
+				<span>{{ count.count3 }}</span>
+			</li>
+			<li data-type="4">
+				<span>下架</span>
+				<span>{{ count.count4 }}</span>
+			</li>
+		</ul>
+		<ul class="broker-list">
+			<li v-for="(item,index) in showData">
+				<div class="broker-img" :data-id="item.user_id" @click="goto(item)">
+					<img :src="domain+item.url + item.thumb" alt="">
+				</div>
+				<ul class="list-content">
+					<li><h2>{{ item.title }}</h2></li>
+					<li>发布时间：{{ item.time }}</li>
+					<li :class="getClass(index)">状态：{{ getStatus(index) }}</li>
+				</ul>
+				<div v-if="item.status == 1 && item.is_delete == 2" class="failedCause-on orange-text success-func">
+					<span class="btn" @click="lower(item)">下架</span>
+					<span class="btn" @click="edits(item)">修改</span>
+					<span class="btn" @click="refresh(item)">刷新</span>
+				</div>
+				<div v-if="item.is_delete == 1" class="failedCause-on orange-text success-func">
+					<span class="btn" @click="shelf(item)">上架</span>
+				</div>
+				<div v-if="item.status == 3 && item.is_delete == 2" class="failedCause">
+					<div>未实名认证，请完成实名认证。</div>
+					<div class="auth" @click="gotoAuth">实名认证</div>
+				</div>
+			</li>
+		</ul>
+		<div class="releasenull" v-if="isshow"><img src="img/releasenull.png"></div>
+		<div class="releasenull" v-if="isshows"><img src="img/downnull.png"></div>
+	</div>
+		<script src="js/myRelease.js" charset="utf-8"></script>
+	</body>
+
+</html>

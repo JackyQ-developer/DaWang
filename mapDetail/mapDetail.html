@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>二手房详情</title>
+
+		<!-- 公用部分 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,
+	maximum-scale=1,user-scalable=no">
+		<script src="../public/js/Flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.min.css">
+		<script src="../public/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../public/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script src="../public/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+		<script src="../public/js/vue.js" charset="utf-8"></script>
+		<script src="../public/js/public.js" charset="utf-8"></script>
+		<!-- 公用部分 -->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=TtahsrKIfCHwW9fdbGBmWfoEQCIoF01A"></script>
+		<style type="text/css">
+			.map-container {
+				position: absolute;
+				top:1.333333rem;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+			.resets {
+				position: absolute;
+				right: 0.3rem;
+				bottom: 0.3rem;
+				font-size: 0.45rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="childpage-header-container childpage-header-opacity">
+			<header class="childpage-header">
+				<i class="iconfont icon-guanbi icon-fanhui1" id="back"></i>
+				<i class="iconfont icon-weizhi childpage-header-right" id="phonemap"></i>
+			</header>
+		</div>
+			<div class="map-container" id="map-container">地图加载中···</div>
+			<div class="resets"><i class="iconfont icon-weizhi"></i>我的位置</div>
+	</body>
+	<script type="text/javascript" src="js/mapDetail.js"></script>
+</html>

@@ -1,0 +1,69 @@
+/* 列表 */
+.mui-table-view:after {
+	display: none;
+}
+.nearby-list ul li {
+	background-color: #fff;
+	color: #000;
+	font-size: 0.333333rem;
+	padding: 0.453333rem 0.426667rem;
+	overflow: hidden;
+	border-bottom: 1px solid #eaebed;
+}
+.nearby-list ul li:last-child {
+	border: none;
+}
+.nearby-houseThumb {
+	width: 2.666667rem;
+	height: 2.666667rem;
+	float: left;
+	margin-right: 0.746667rem;
+}
+.nearby-houseInfo {
+	display: flex;
+	height: 2.666667rem;
+	flex-direction: column;
+	justify-content: space-around;
+	white-space: nowrap;
+}
+.nearby-houseInfo h1 {
+	font-size: 0.4rem;
+	font-weight: normal;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.nearby-houseInfo p {
+	margin-bottom: 0;
+	font-size: 0.333333rem;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.tag {
+	display: inline-block;
+	font-size: 0.333333rem;
+	padding: 0.026667rem 0.293333rem;
+	border-radius: 4px;
+	background-color: yellow;
+}
+.tag:first-child {
+	margin-right: 0.266667rem;
+}
+.pink-tag {
+	color: #f14f4f;
+	background-color: #ffe6e6;
+}
+.green-tag {
+	background-color: #e8fff4;
+	color: #17a76f;
+}
+.releasenull {
+	width: 5rem;
+	height: 5rem;
+	position: fixed;
+	top: 0;left: 0;bottom: 0;right: 0;
+	margin:auto;
+}

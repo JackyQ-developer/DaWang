@@ -1,0 +1,118 @@
+.nearby-list {
+	position: static;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    overflow: auto;
+    width: auto;
+}
+.nearby {
+	justify-content: flex-start;
+}
+.nearby-address {
+	margin-left: 0.32rem;
+	vertical-align: top;
+}
+.nearby-nav {
+	/*height: 1.333333rem;*/
+}
+.nearby-nav .swiper-container {
+	width: 100%;
+	background-color: #eaebed;
+	font-size: 0.453333rem;
+}
+.nearby-nav .swiper-wrapper {
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.nearby-nav .swiper-slide {
+	width: auto !important;
+	margin: 0.2rem 0.203333rem !important;
+	padding: 0.213333rem 0.4rem;
+	background-color: #fff;
+	color: #f14f4f;
+	border-radius: 0.8rem;
+}
+
+.nearby-list ul li {
+	background-color: #fff;
+	color: #000;
+	font-size: 0.333333rem;
+	padding: 0.453333rem 0.426667rem;
+	overflow: hidden;
+	border-bottom: 1px solid #eaebed;
+}
+.nearby-list ul li:last-child {
+	border: none;
+}
+.nearby-houseThumb {
+	width: 3.2rem;
+	height: 2.4rem;
+	float: left;
+	margin-right: 0.546667rem;
+}
+.nearby-houseInfo {
+	display: flex;
+	height: 2.4rem;
+	flex-direction: column;
+	justify-content: space-around;
+	white-space: nowrap;
+}
+.nearby-houseInfo h1 {
+	font-size: 0.4rem;
+	font-weight: normal;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin:0;
+}
+.nearby-houseInfo p {
+	margin-bottom: 0;
+	font-size: 0.333333rem;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+}
+.tag {
+	display: inline-block;
+	font-size: 0.333333rem;
+	padding: 0.026667rem 0.293333rem;
+	border-radius: 4px;
+	background-color: yellow;
+}
+.tag:first-child {
+	margin-right: 0.266667rem;
+}
+.pink-tag {
+	color: #f14f4f;
+	background-color: #ffe6e6;
+}
+.green-tag {
+	background-color: #e8fff4;
+	color: #17a76f;
+}
+.isshow {
+	text-align: center;
+	font-size: 0.3rem;
+	margin-top: 0.2rem;
+}
+#refresh .icon{
+	width: 0.4rem;
+	height: 0.4rem;
+	margin-top: 0.1rem;
+}
+/* 刷新动画 */
+#refresh .icon-rotate {
+	color: #f14f4f;
+	animation: rotate 1s infinite linear;
+}
+@keyframes rotate {
+	from {transform: rotate(0deg)}
+	to {transform: rotate(-360deg)}
+}

@@ -1,0 +1,214 @@
+.mui-backdrop {
+    position: fixed;
+    top: 2.666666rem;
+    width: 100%;
+    height: calc(100% - 2.666666rem);
+    z-index: 998;
+    background-color: rgba(0,0,0,.3);
+}
+.nearby-list {
+	position: absolute;
+    top: 2.666666rem;
+    bottom: 0;
+    left: 0;
+    right:0;
+    overflow: auto;
+    width: auto;
+}
+.nearby {
+	justify-content: flex-start;
+}
+.nearby-address {
+	margin-left: 0.32rem;
+	margin-right: 0.24rem;
+}
+.nearby-nav-container {
+	height: 1.333333rem;
+}
+.nearby-nav {
+	position: fixed;
+	top: 1.333333rem;
+	left: 0;
+	width: 100%;
+	height: 1.333333rem;
+	background-color: #eaebed;
+	z-index: 3;
+	font-size: 0.4rem;
+	color: #666666;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.nearby-nav nav {
+	line-height: 1.333333rem;
+}
+.nearby-nav .iconfont {
+	font-size: 0.266667rem;
+}
+.nearby-nav .swiper-wrapper {
+	height: auto;
+}
+.nearby-nav .swiper-slide {
+	width: auto !important;
+	margin: 0 0.293333rem !important;
+	padding: 0.213333rem 0.4rem;
+	background-color: #fff;
+	color: #f14f4f;
+	border-radius: 0.8rem;
+}
+
+.nearby-list ul li {
+	background-color: #fff;
+	color: #000;
+	font-size: 0.333333rem;
+	padding: 0.453333rem 0.426667rem;
+	overflow: hidden;
+	border-bottom: 1px solid #eaebed;
+}
+.nearby-list ul li:last-child {
+	border: none;
+}
+.nearby-houseThumb {
+	width: 3.2rem;
+	height: 2.4rem;
+	float: left;
+	margin-right: 0.546667rem;
+}
+.nearby-houseInfo {
+	display: flex;
+	height: 2.4rem;
+	flex-direction: column;
+	justify-content: space-around;
+	white-space: nowrap;
+}
+.nearby-houseInfo h1 {
+	font-size: 0.4rem;
+	font-weight: normal;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin:0;
+}
+.nearby-houseInfo p {
+	margin-bottom: 0;
+	font-size: 0.333333rem;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.tag {
+	display: inline-block;
+	font-size: 0.333333rem;
+	padding: 0.026667rem 0.293333rem;
+	border-radius: 4px;
+	background-color: yellow;
+}
+.tag:first-child {
+	margin-right: 0.266667rem;
+}
+.pink-tag {
+	color: #f14f4f;
+	background-color: #ffe6e6;
+}
+.green-tag {
+	background-color: #e8fff4;
+	color: #17a76f;
+}
+.mui-off-canvas-right {
+	width: 80%;
+	background-color: #fff;
+}
+.select-container {
+	font-size: 0.32rem;
+	color: #666666;
+	box-sizing: border-box;
+	padding: 0.453333rem 0.346667rem;
+}
+.select-container h1 {
+	font-weight: normal;
+	font-size: 0.4rem;
+	color: #666666;
+}
+.select-container ul {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.mui-popover-arrow {
+	display: none !important;
+}
+.mui-active {
+	width: 100%;
+	left: 0 !important;
+	padding: 0.4rem 0;
+}
+.select-container {
+	font-size: 0.32rem;
+	color: #666666;
+	box-sizing: border-box;
+	padding: 0 0.346667rem;
+}
+.select-container h1 {
+	font-weight: normal;
+	font-size: 0.4rem;
+	color: #666666;
+	margin-bottom: 0.32rem;
+}
+.select-container ul {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	font-size: 0.32rem;
+	color: #666666;
+}
+.select-container ul li {
+	background-color: #e4e4e4;
+	width: 2.24rem;
+	height: 0.906667rem;
+	border-radius: 4px;
+	text-align: center;
+	line-height: 0.906667rem;
+	margin-bottom: 0.333333rem;
+}
+.select-container ul li.btn-active {
+	background-color: #f14f4f;
+	color: #fff;
+}
+.btn-container {
+	font-size: 0.266667rem;
+	color: #333;
+	text-align: center;
+	display: flex;
+	justify-content: space-around;
+}
+.btn-container span {
+	width: 40%;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	background-color: #eee;
+	border-radius: 0.45rem;
+}
+.btn-container span.red-checked {
+	background-color: #f14f4f;
+	color: #fff;
+}
+.blue-text {
+	color: #f14f4f;
+}
+.select-container .input-container {
+	color: #aaa;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.4rem;
+}
+.select-container .input-container input {
+	text-align: center;
+	color: #333;
+	height: 0.933333rem;
+	width: 4.266667rem;
+	font-size: 12px;
+	margin-bottom: 0;
+}

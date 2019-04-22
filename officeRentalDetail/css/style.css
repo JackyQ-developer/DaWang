@@ -1,0 +1,199 @@
+.ndHandHouseDetail-banner .swiper-pagination-fraction {
+	text-align: right;
+	box-sizing: border-box;
+	padding-right: 0.533333rem;
+	color: #fff;
+	font-size: 0.426667rem;
+}
+.tag {
+	display: inline-block;
+    font-size: 0.333333rem;
+    padding: 0.186667rem 0.293333rem;
+    border-radius: 4px;
+    background-color: yellow;
+}
+.tag:first-child {
+	margin-right: 0.48rem;
+}
+.pink-tag {
+    color: #f14f4f;
+    background-color: #ffe6e6;
+}
+.green-tag {
+    background-color: #e8fff4;
+    color: #17a76f;
+}
+.ndHandHouseDetail-article {
+	padding-top: 0.533333rem;
+}
+.ndHandHouseDetail-article h1 {
+	color: #333;
+	font-size: 0.56rem;
+	
+	margin-bottom: 0.346667rem;
+}
+.container-25 {
+	width: calc(100% - 0.4rem);
+	margin: 0 auto;
+}
+.tag-container {
+	margin-bottom: 0.4rem;
+}
+.childpage-header-opacity {
+	height: 0;
+}
+
+.ndHandHouseDetail-info {
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.4rem;
+	color: #666666;
+	line-height: 0.88rem;
+	padding: 0.533333rem 0;
+	border-bottom: 1px solid #e4e4e4;
+}
+.ndHandHouseDetail-map {
+	padding-bottom: 0.4rem;
+}
+.ndHandHouseDetail-map h2 {
+	font-size: 0.48rem;
+	color: #333333;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 0.453333rem;
+	margin-bottom: 0.293333rem;
+}
+.ndHandHouseDetail-map h2 span {
+	color: #333;
+}
+.ndHandHouseDetail-map h2 em {
+	font-size: 0.373333rem;
+}
+.ndHandHouseDetail-map-container {
+	margin-top: 0.4rem;
+	height: 4.0rem;
+}
+.ndHandHouseDetail-houseDetail {
+	font-size: 0.4rem;
+	color: #666666;
+	line-height: 0.533333rem;
+}
+.ndHandHouseDetail-hideBox {
+	text-align: center;
+	line-height: 0.666667rem;
+	border-top: 1px solid #e4e4e4;
+	font-size: 0.346667rem;
+}
+.ndHandHouseDetail-hideBox .iconfont {
+	font-size: 0.266667rem;
+}
+.ndHandHouseDetail-people {
+	margin-bottom: 0.266667rem;
+}
+.ndHandHouseDetail-people-img {
+	width: 1.6rem;
+	height: 1.6rem;
+	border-radius: 1.6rem;
+	overflow: hidden;
+	float: left;
+	margin-right: 0.4rem;
+}
+.ndHandHouseDetail-people-img img {
+	width: 1.6rem;
+	height: 1.6rem;
+	vertical-align: middle;
+}
+.ndHandHouseDetail-people ul {
+	height: 1.6rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.ndHandHouseDetail-people ul li:first-child {
+	font-size: 0.453333rem;
+	color: #333333;
+}
+.ndHandHouseDetail-people ul li:last-child {
+	font-size: 0.373333rem;
+	color: #666666;
+}
+.ndHandHouseDetail-feedback {
+	color: #666666;
+	font-size: 0.4rem;
+	line-height: 0.506667rem;
+}
+.ndHandHouseDetail-people-container {
+	padding-bottom: 0.506667rem;
+}
+.ndHandHouseDetail-sameVillage {
+	line-height: 0.453333rem;
+}
+.ndHandHouseDetail-sameVillage p {
+	font-size: 0.32rem !important;
+	max-width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.ndHandHouseDetail-footer {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	font-size: 0.48rem;
+	color: #fff;
+	width: 100%;
+	overflow: hidden;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background-color: #fff;
+	z-index: 99999;
+}
+.ndHandHouseDetail-footer-collect {
+	font-size: 0.373333rem;
+	color: #333333;
+	width: 1.866667rem;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 0.213333rem 0;
+    justify-content: space-around;
+    height: 1.333333rem;
+    background-color: #fff;
+}
+.ndHandHouseDetail-footer-chat {
+	background-color: #fdb87d;
+	text-align: center;
+	width: 48%;
+	height: 1.333333rem;
+	line-height: 1.333333rem;
+	overflow: hidden;
+}
+.ndHandHouseDetail-footer-phone {
+	background-color: #f14f4f;
+	text-align: center;
+	width: calc(100% - 1.866667rem);
+	height: 1.333333rem;
+	line-height: 1.333333rem;
+}
+.dHandHouseDetail-footer-collect .icon-guanzhu {
+	font-size: 0.533333rem !important;
+}
+.dHandHouseDetail-footer-collect .icon-shoucang {
+	font-size: 0.533333rem !important;
+}
+
+/* 地图 */
+.map-container {
+	margin-top: 0.266667rem;
+	height: 200px;
+}
+
+/* 收藏图标 */
+.ndHandHouseDetail-footer-collect .icon-shoucang {
+	color: #f14f4f;
+	font-size: 0.453333rem;
+}

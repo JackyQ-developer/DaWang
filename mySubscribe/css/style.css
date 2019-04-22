@@ -1,0 +1,138 @@
+.flex-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.4rem 0.4rem;
+}
+.red-rect {
+	display: inline-block;
+	line-height: 0.346667rem;
+	font-size: 0.32rem;
+	color: #f36464;
+	border: 1px solid #f36464;
+	padding: 0.04rem 0.32rem;
+	margin-left: 0.266667rem;
+}
+.flex-around {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+.broker-infolist {
+	font-size: 0.426667rem;
+	color: #333333;
+	line-height: 0.613333rem;
+}
+.broker-infolist p {
+	margin-bottom: 0;
+}
+/* swiper */
+.pagination-container {
+	 height: 1.333333rem;
+}
+.swiper-pagination {
+	position: fixed;
+	top: 1.333333rem;
+	width: 100%;
+	text-align: left;
+	background-color: #fff;
+	padding-top: 0.266667rem;
+	height: 1.0rem;
+	display: flex;
+    justify-content: space-around;
+}
+.brokerDetails-bullet {
+	display: inline-block;
+	width: 1.573333rem;
+	line-height: 1.0rem;
+	margin-left: 0.56rem;
+	font-size: 0.426667rem;
+	text-align: center;
+}
+.brokerDetails-active {
+	color: #f14949;
+	border-bottom: 2px solid #ff5a54;
+}
+.swiper-container article{
+    padding: 0 0.346667rem;
+    margin: 0.613333rem 0;
+}
+.swiper-container article h2 {
+	font-size: 0.426667rem;
+	color: #333;
+	margin-bottom: 0.4rem;
+}
+.scopeOfPrice {
+	color: #eee;
+	text-align: center;
+}
+.scopeOfPrice input {
+	border-radius: 4px;
+	width: 3.733333rem;
+	height: 0.8rem;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+	padding: 0 0.266667rem;
+	text-align: center;
+	border: 1px solid #d8d8d8;
+}
+
+.desiredLocation {
+	display: flex;
+	flex-wrap: wrap;
+}
+.desiredLocation span {
+	background-color: #eeeeee;
+	border-radius: 4px;
+	padding: 0 0.32rem;
+	line-height: 1.066667rem;
+	margin-right: 0.266667rem;
+	margin-bottom: 0.2rem;
+	position: relative;
+}
+.desiredLocation span i.icon-cha {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 0.2rem;
+}
+.desiredLocation span:last-child {
+	width: 1.066667rem;
+	background-color: #fcdcdc;
+	color: #f14f4f;
+	margin-right: 0;
+	text-align: center;
+	font-size: 0.8rem;
+	padding: 0;
+}
+.desiredLocation span i {
+	font-size: 0.426667rem;
+}
+
+.hallRoom {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.hallRoom span {
+	width: 23%;
+	text-align: center;
+	border-radius: 4px;
+	line-height: 1.04rem;
+	background-color: #eeeeee;
+	margin-bottom: 0.266667rem;
+}
+
+.hallRoom span.checked {
+	background-color: #fcdcdc;
+	color: #f14f4f;
+}
+
+.subscribe {
+	background-color: #f14f4f;
+	color: #fff;
+	text-align: center;
+	line-height: 1.333333rem;
+	font-size: 0.453333rem;
+}

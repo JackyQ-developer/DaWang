@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>合租</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- 公用部分 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,
+maximum-scale=1,user-scalable=no">
+		<script src="../public/js/Flexible.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../public/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script src="../public/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+		<script src="../public/js/vue.js" charset="utf-8"></script>
+		<script src="../public/js/public.js" charset="utf-8"></script>
+		<!-- 公用部分 -->
+
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/swiper-4.3.3.min.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/style.css" />
+		<script src="../public/js/swiper-4.3.3.min.js" charset="utf-8"></script>
+		<script src="../public/js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/city.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="childpage-header-container">
+			<header class="childpage-header nearby">
+				<i class="iconfont icon-guanbi icon-fanhui1" id="back"></i>
+				<div class="childpage-header-title">
+					<input id="search" type="search" placeholder="输入小区名称或地段">
+					<i class="iconfont icon-shousuo"></i>
+				</div>
+				<!-- <i class="iconfont icon-xiaoxi1"></i> -->
+			</header>
+		</div>
+		
+		<!-- 选择器开始 -->
+		<div class="nearby-nav-container">
+			<div class="nearby-nav">
+				<nav id="area">
+					<span>区域</span>
+					<i class="iconfont icon-xia"></i>
+				</nav>
+				<nav id="price">
+					<span>价格</span>
+					<i class="iconfont icon-xia"></i>
+				</nav>
+				<nav id="room">
+					<span>户型</span>
+					<i class="iconfont icon-xia"></i>
+				</nav>
+				<nav id="more">
+					<span>更多</span>
+					<i class="iconfont icon-xia"></i>
+				</nav>
+			</div>
+		</div>
+		<!-- 选择器结束 -->
+		
+		<!-- 地区弹出层 -->
+		<section class="showChose" v-show="showChose" v-cloak>
+	      	<section class="address">
+	      		<h4>已选:</h4>
+		        <section class="title">
+		          	<div class="area" @click="provinceSelected(0)">{{Province?Province:''}}</div>
+		          	<div class="area" @click="citySelected()" :class="City?'':'active'">{{City?'> &nbsp;&nbsp;'+City:''}}</div>
+		        </section>
+		        <div class="area-uls">
+		        	<ul>
+		        		<li class="addList" id="region" @click="provinceSelected(1,1)">区域</li>
+		        		<!-- <li class="addList" id="studentArea" @click="provinceSelected(1,2)">学区</li> -->
+		        	</ul>
+			        <ul>
+			          	<li class="addList" v-for="(v,k) in arealist" @click="getProvinceId(v.value, v.text, k)" v-show="showProvince" :class="v.selected ? 'active' : ''">{{v.text}}</li>
+			        </ul>
+			        <ul style="margin-right: 0.3rem;">
+			          	<li class="addList" v-for="(v,k) in showCityList" @click="getCityId(v.value, v.text, k)" v-show="showCity" :class="v.selected ? 'active' : ''">{{v.text}}</li>
+			        </ul>
+			    </div>
+		        <div class="btn-container container-choise">
+					<span id="clearAreas">不限条件</span>
+					<span class="red-checked" id="areasConfirm">确定</span>
+				</div>
+	    	</section>
+		</section>
+		<!-- 地区弹出层 -->
+
+		<!-- 价格弹出层 -->
+		<div id="popover2" class="mui-popover">
+			<div class="select-container">
+				<h1>价格区间（元）</h1>
+				<ul data-type="price">
+					<li data-price="0,500">500元以下</li>
+					<li data-price="500,1000">500-1000元</li>
+					<li data-price="1000,1500">1000-1500元</li>
+					<li data-price="1500,2000">1500-2000元</li>
+					<li data-price="2000,2500">2000-2500元</li>
+					<li data-price="2500,3000">2500-3000元</li>
+					<li data-price="3000,1000000">3000元以上</li>
+				</ul>
+				<div class="input-container">
+					<input type="text" placeholder="最低价格">
+					<span>—</span>
+					<input type="text" placeholder="最高价格">
+				</div>
+			</div>
+			<div class="btn-container">
+				<span id="clearPrice">不限条件</span>
+				<span class="red-checked" id="priceConfirm">确定</span>
+			</div>
+		</div>
+		<!-- 价格弹出层 -->
+
+		<!-- 户型弹出层 -->
+		<div id="popover" class="mui-popover">
+			<div class="select-container">
+				<h1>户型选择</h1>
+				<ul data-type="room">
+					<li>一室</li>
+					<li>二室</li>
+					<li>三室</li>
+					<li>四室</li>
+					<li>五室及以上</li>
+				</ul>
+			</div>
+			<div class="btn-container">
+				<span id="clearRoom">不限条件</span>
+				<span class="red-checked" id="roomConfirm">确定</span>
+			</div>
+		</div>
+		<!-- 户型弹出层 -->
+
+		<!-- 内容区开始 -->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper nearby-list">
+			<div class="mui-scroll">
+				<ul id="app" class="mui-table-view mui-table-view-chevron" v-cloak>
+					<li class="li" v-for="(item,index) in showData" :data-id="item.houseId">
+						<img class="nearby-houseThumb" :src="domain+item.url+item.thumb" alt="房屋缩略图">
+						<div class="nearby-houseInfo">
+							<h1>{{ item.title }}</h1>
+							<p>{{ item.area }}㎡/{{ item.height }}（共{{ item.total }}层）/{{ direction(index) }}</p>
+							<p><span class="red-text">{{ parseInt(item.price) }}元/月</span></p>
+							<div v-if="false">
+								<span class="tag pink-tag">满五唯一</span>
+								<span class="tag green-tag">最新房源</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 内容区结束 -->
+		<div class="searchnull"><img src="../public/images/searchnull.png"></div>
+
+		<script type="text/javascript" src="../public/js/city.js"></script>
+		<script src="js/jointRentList.js" charset="utf-8"></script>
+	</body>
+
+</html>

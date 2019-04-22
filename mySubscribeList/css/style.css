@@ -1,0 +1,71 @@
+*{
+  -webkit-touch-callout:none;  /*系统默认菜单被禁用*/
+  -webkit-user-select:none; /*webkit浏览器*/
+  -khtml-user-select:none; /*早期浏览器*/
+  -moz-user-select:none; /*火狐*/
+  -ms-user-select:none;  /*IE10*/
+  user-select:none;
+}
+.flex-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.4rem 0.4rem;
+}
+.flex-around {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+
+.mySubscribeList {
+	font-size: 0.373333rem;
+	color: #999999;
+	margin-bottom: 1.786666rem;
+}
+.mySubscribeList>ul>li {
+	width: calc(100% - 0.4rem);
+	margin: 0.453333rem auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.373333rem;
+	color: #999999;
+	line-height: 0.8rem;
+	padding: 0.4rem 0.506667rem;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 0 2px 6px #f4dbdb
+}
+.mySubscribeList .left-container {
+	width: 90%;
+}
+.mySubscribeList .left-container h2 {
+	font-size: 0.426667rem;
+	color: #333;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.mySubscribeList .left-container p {
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.subscribe {
+	background-color: #f14f4f;
+	color: #fff;
+	text-align: center;
+	line-height: 1.333333rem;
+	font-size: 0.453333rem;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
