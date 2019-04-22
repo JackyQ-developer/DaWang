@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Authentication</title>
+	
+	<!-- 公用部分 -->
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<script src="../public/js/Flexible.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../public/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script src="../public/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+		<script src="../public/js/public.js" charset="utf-8"></script>
+		<!-- 公用部分 -->
+
+	<link rel="stylesheet" type="text/css" href="css/Authentication.css">
+</head>
+<body>
+	<div class="childpage-header-container">
+		<header class="childpage-header">
+			<i class="iconfont icon-guanbi icon-fanhui1" id="back"></i>
+			<span class="childpage-header-title">经纪人认证</span>
+		</header>
+	</div>
+	<div class="hr"></div>
+	<div class="per-top qj-flex">
+		<ul>
+			<li>
+				<h2>真实头像</h2>
+			</li>
+			<li>1.上传本人近期，正面、免冠、彩色证件照</li>
+			<li>2.上传照片要求图像清晰、五官清楚</li>
+			<li>3.上传头像不符合要求、需重新上传</li>
+		</ul>
+		<img class="upload-photo realPhoto" data-type="micro_img" id="micro_img" src="./img/realPhoto.png" alt="">
+	</div>
+	<div class="hr"></div>
+	<article class="per-tow">
+		<ul class="per-tow-con">
+			<li class="inputs">
+				<span>真实姓名</span>
+				<em id="user-name"></em>
+			</li>
+			<li class="inputs">
+				<span>手机号码</span>
+				<em id="mobile"></em>
+			</li>
+			<li id="workArea">
+				<span>工作区域</span>
+				<em id="areaText">请选择您的工作区域</em>
+				<i class="iconfont icon-qianjinjiantou"></i>
+			</li>
+		</ul>
+	</article>
+	<div class="hr"></div>
+	<article class="per-three">
+		<h2 class="per-tow-head">
+			<span class="tow-left">微信二维码名片</span>
+			<span class="tow-right"></span>
+		</h2>
+		<div id="cates-photos">
+			<h3 class="per-three-title">上传您的二维码名片</h3>
+			<div class="per-upload-one qj-qrcode">
+				<img src="img/qrCode.png" id="wechat_img" data-type="wechat_img" class="upload-photo" />
+			</div>
+			<div class="notice"></div>
+			<div class="per-submit" id="true-submits">提交</div>
+		</div>
+	</article>
+</body>
+	<script type="text/javascript" src="js/Authentication.js"></script>
+</html>

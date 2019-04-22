@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>changeMobile1</title>
+
+		<!-- 公用部分 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,
+maximum-scale=1,user-scalable=no">
+		<script src="../public/js/Flexible.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../public/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script src="../public/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+		<script src="../public/js/public.js" charset="utf-8"></script>
+		<!-- 公用部分 -->
+
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="../public/js/validator.min.js" charset="utf-8"></script>
+		<script src="./js/register.js" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init({
+				gestureConfig:{
+				   tap: true, //默认为true
+				   doubletap: true, //默认为false
+				   longtap: true, //默认为false
+				   swipe: true, //默认为true
+				   drag: true, //默认为true
+				   hold:true,//默认为true，不监听
+				   release:true//默认为true，不监听
+			  	}
+			})
+		</script>
+	</head>
+
+	<body>
+		<div class="childpage-header-container">
+			<header class="childpage-header">
+				<i class="iconfont icon-guanbi icon-fanhui1" id="back"></i>
+				<span class=""></span>
+			</header>
+		</div>
+		<main class="main-90">
+
+			<div class="login-input-container">
+				<div class="login-input-box">
+					<i class="iconfont icon-yonghu"></i>
+					<input class="need-clear" type="text" id="mobile" placeholder="请输入手机号">
+					<i class="iconfont icon-cha" id="clear" style="display: none;"></i>
+				</div>
+				<div class="login-input-box">
+					<i class="iconfont icon-yanzhengma"></i>
+					<input type="text" id="mobilelz" placeholder="请输入验证码" style="width: 4rem;">
+					<span class="register-orange-text" style="margin-left: auto;font-size: 0.333333rem" id="getIdentfyCode">获取验证码</span>
+				</div>
+			</div>
+
+			<span class="login login-login" id="register">确  定</span>
+		</main>
+	</body>
+</html>

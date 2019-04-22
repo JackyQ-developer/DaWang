@@ -1,0 +1,26 @@
+.rentList{
+	border-top:0.24rem solid #e4e4e4;
+	padding: 0 5%;
+}
+.rentList li{
+	border-bottom:1px solid #999;
+	font-size: 0.426667rem;
+	padding:0.4rem 0.1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.rentList svg{
+	width: 0.8rem;
+	height: 0.8rem;
+}
+.rentList li span{
+	margin-left:0.4rem;
+	margin-right: auto;
+}
+.prompts{
+	font-size: 0.4rem;
+	color: #f14f4f;
+	padding: 0 5%;
+	margin-top: 0.4rem;
+}

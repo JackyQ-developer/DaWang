@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>chatList</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- 公用部分 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,
+maximum-scale=1,user-scalable=no">
+		<script src="../public/js/Flexible.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script src="../public/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+		<script src="../public/js/vue.js" charset="utf-8"></script>
+		<script src="../public/js/public.js" charset="utf-8"></script>
+		<!-- 公用部分 -->
+		
+		<script src="../public/fonts/iconfont.js"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/swiper-4.3.3.min.css" />
+		<link rel="stylesheet" type="text/css" href="./css/style.css" />
+		<style>
+			html,
+			body {
+				background-color: #fff;
+			}
+			.icon {
+			   width: 1.333333rem; height: 1.333333rem;
+			   vertical-align: -0.15em;
+			   fill: currentColor;
+			   overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="childpage-header-container">
+			<header class="childpage-header">
+				<div class="childpage-header-title">
+					消息
+				</div>
+			</header>
+		</div>
+
+		<main id="app" v-cloak>
+			<!-- <ul class="chatList-fixed border-container">
+				<li @click="gotoNoticeList">
+					<svg class="icon" aria-hidden="true">
+					  	<use xlink:href="#icon-weibiaoti--1"></use>
+					</svg>
+					<div class="middle-container">
+						<h2>通知</h2>
+						<p>团结小区房屋消息发布成功</p>
+					</div>
+					<em>05-10</em>
+				</li>
+				<li>
+					<svg class="icon" aria-hidden="true">
+					  	<use xlink:href="#icon-guanzhu-"></use>
+					</svg>
+					<div class="middle-container">
+						<h2>关注</h2>
+						<p>您关注的经纪人发布了新房源</p>
+					</div>
+					<em>05-10</em>
+				</li>
+			</ul> -->
+
+			<ul class="chatList-fixed">
+				<li v-for="item in chatList" @click="gotoChat(item)">
+					<div class="img-container">
+						<img :src="domain+item.url+item.avatar" />
+						<em v-if="item.count != 0">{{item.count > 99 ? 99 : item.count}}</em>
+					</div>
+					
+					<div class="middle-container">
+						<h2>{{item.nickname}}</h2>
+						<p>{{item.content}}</p>
+					</div>
+					<em>{{item.time}}</em>
+				</li>
+			</ul>
+			
+			<img class="noMessage" v-if="chatList.length == 0" src="img/noChat.png" />
+		</main>
+
+		<script src="./js/chatList.js"></script>
+	</body>
+
+</html>

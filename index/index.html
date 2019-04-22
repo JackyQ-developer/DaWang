@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>首页</title>
+
+		<!-- 公用部分 -->
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<script src="../public/js/Flexible.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../public/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script src="../public/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+		<script src="../public/js/public.js" charset="utf-8"></script>
+		<!-- 公用部分 -->
+		
+		<link rel="stylesheet" type="text/css" href="../public/css/swiper-4.3.3.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="../public/js/vue.min.js" charset="utf-8"></script>
+		<script src="fonts/iconfont.js" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!-- 天气轮播 -->
+		<div class="banner" id="weather">
+			<!-- 背景轮播开始 -->
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-no-swiping swiper-slide" v-for="item in weather">
+			        	<img :src="item.src" :alt="item.alt">
+			        </div>
+			    </div>
+			</div>
+			<!-- 背景轮播结束 -->
+
+			<!-- 地区+天气 -->
+		    <div class="weather-container">
+		    	<span>呼和浩特 </span>
+		    	<em>{{ temperature }}</em>
+		    	<br /><br />
+		    	<i>{{ weatherNotice }}</i>
+		    </div>
+		    <!-- 地区+天气 -->
+
+		    <!-- 搜索 -->
+		    <!-- <div class="index-searchBox-container">
+		    	<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-shousuo"></use>
+				</svg>
+				<input class="index-searchBox" type="search" />
+			</div> -->
+		    <!-- 搜索 -->
+		</div>
+		<!-- 天气轮播 -->
+
+		<!-- 图标导航开始 -->
+		<ul class="index-width nav-container navigator">
+			<li data-href="ndHandHouseList">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-ershoufang-2"></use>
+				</svg>
+				<span>二手房</span>
+			</li>
+			<li data-href="wholeRentList">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-zhengzu-"></use>
+				</svg>
+				<span>整租</span>
+			</li>
+			<li data-href="jointRentList">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-hezu-1"></use>
+				</svg>
+				<span>合租</span>
+			</li>
+			<li data-href="buildingListChoice">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-xiezilou-2"></use>
+				</svg>
+				<span>写字楼</span>
+			</li>
+		</ul>
+		<ul class="index-width nav-container navigator" style="margin-bottom: 0.613333rem;">
+			<li data-href="shopingListChoice">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-shangpu-"></use>
+				</svg>
+				<span>商铺</span>
+			</li>
+			<li data-href="workshopListChoice">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-changfang-1"></use>
+				</svg>
+				<span>厂房仓库</span>
+			</li>
+			<li data-href="houseMap">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-dituzhaofang-1"></use>
+				</svg>
+				<span>地图找房</span>
+			</li>
+			<li data-href="villageList">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-xiaoqu-"></use>
+				</svg>
+				<span>找小区</span>
+			</li>
+		</ul>
+		<!-- 图标导航结束 -->
+
+		<!-- 实用工具开始 -->
+		<h2 class="index-width">实用工具</h2>
+		<ul class="navigator index-width tools">
+			<li data-href="toolHouseLoan">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-fangdaijisuan"></use>
+				</svg>
+				<span>房贷计算</span>
+			</li>
+			<li data-href="brokerList">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-jingjiren"></use>
+				</svg>
+				<span>经纪人</span>
+			</li>
+			<li data-href="toolTaxation">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-shuifeijisuan"></use>
+				</svg>
+				<span>税费计算</span>
+			</li>
+			<li data-href="encyList">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-fangchanbaike"></use>
+				</svg>
+				<span>房产百科</span>
+			</li>
+			<!-- <li>
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-baike-"></use>
+				</svg>
+				<span>装修</span>
+			</li>
+			<li>
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-baike-"></use>
+				</svg>
+				<span>贷款</span>
+			</li> -->
+		</ul>
+		<!-- 实用工具结束 -->
+
+		<!-- 推荐房源开始 -->
+		<div class="nearby-list">
+			<h2 class="index-width flex">
+				<span id="test">推荐房源</span>
+				<em id="refresh">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-icon--"></use>
+					</svg>
+				</em>
+			</h2>
+			<ul id="app" class="mui-table-view mui-table-view-chevron">
+				<li class="li" v-for="(item,index) in recommendData" :data-id="item.houseId" :data-type="item.type" @click="goto(item)">
+					<img class="nearby-houseThumb" :src="domain + item.url + item.thumb" alt="房屋缩略图">
+					<div class="nearby-houseInfo">
+						<h1>{{ item.title }}</h1>
+						<p>{{ item.title1 }}</p>
+						<p>{{ item.title2 }}</p>
+						<div v-if="false">
+							<span class="tag pink-tag">满五唯一</span>
+							<span class="tag green-tag">最新房源</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- 推荐房源结束 -->
+		
+		<!-- 底部导航占位div -->
+		<div class="footer"></div>
+		<!-- 底部导航占位div -->
+
+		<!-- 更新界面开始 -->
+		<div class="update-bg">
+			<img class="update-ani" src="./img/updata-ani.png" alt="" />
+			<div class="update-con">
+				<div class="update-body">
+					<i class="updtate-close iconfont">&#xe635;</i>
+					<h4>【系统更新】</h4>
+					
+					<ul class="update-node">
+					</ul>
+					<div class="update-btn">
+						<button class="update-now">立即更新</button>
+						<div class="update-progress">
+							<div class="progress-bar"></div>
+							<span class="percent"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 更新界面结束 -->
+		
+		<!-- 广告页面开始 -->
+		
+		<!-- 广告页面结束 -->
+
+		<!-- JS开始 -->
+		<script src="js/util.js"></script>
+		<script src="js/init.js"></script>
+		<script src="../public/js/swiper-4.3.3.min.js"></script>
+		<script src="../public/js/update.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/websocket.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('#test').click(function(){
+//				../houseMap/houseMap.html
+				mui.openWindow('../advertisement/advertisement.html')
+//				mui.openWindow({
+//					url: 'http://www.dangwang116.com',
+//					id: 'advertisement',
+//					styles: { // 窗口参数 参考5+规范中的WebviewStyle,也就是说WebviewStyle下的参数都可以在此设置
+//						titleNView: { // 窗口的标题栏控件
+//							autoBackButton: true,	//返回
+//							backButtonAutoControl: 'close',
+//							titleText: "标题栏", // 标题栏文字,当不设置此属性时，默认加载当前页面的标题，并自动更新页面的标题
+//							titleColor: "#000000", // 字体颜色,颜色值格式为"#RRGGBB",默认值为"#000000"
+//							titleSize: "17px", // 字体大小,默认17px
+//							backgroundColor: "#F7F7F7", // 控件背景颜色,颜色值格式为"#RRGGBB",默认值为"#F7F7F7"
+//							progress: { // 标题栏控件的进度条样式
+//								color: "#00FF00", // 进度条颜色,默认值为"#00FF00"  
+//								height: "2px" // 进度条高度,默认值为"2px"         
+//							},
+//							splitLine: { // 标题栏控件的底部分割线，类似borderBottom
+//								color: "#CCCCCC", // 分割线颜色,默认值为"#CCCCCC"  
+//								height: "1px" // 分割线高度,默认值为"2px"
+//							}
+//						}
+//					}
+//				});
+//				本地推送消息
+//				plus.push.createMessage( 'content', 'payload',{
+//					icon: '../public/images/logo.png'
+//				} );
+			})
+		</script>
+	</body>
+</html>

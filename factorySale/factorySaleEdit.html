@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>厂房出售</title>
+
+		<!-- 公用部分 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,
+maximum-scale=1,user-scalable=no">
+		<script src="../public/js/Flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.min.css">
+		<script src="../public/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../public/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script src="../public/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+		<script src="../public/js/vue.js" charset="utf-8"></script>
+		<script src="../public/js/public.js" charset="utf-8"></script>
+		<!-- 公用部分 -->
+		
+		<script src="../public/js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../public/css/animate.css">
+		<link rel="stylesheet" type="text/css" href="../public/css/swiper-4.3.3.min.css">
+		<link rel="stylesheet" type="text/css" href="../public/css/pubrelease.css" />
+		<script src="../public/js/swiper-4.3.3.min.js" charset="utf-8"></script>
+		<script src="../public/js/validator.min.js" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init({
+				gestureConfig:{
+				   tap: true, //默认为true
+				   doubletap: true, //默认为false
+				   longtap: true, //默认为false
+				   swipe: true, //默认为true
+				   drag: true, //默认为true
+				   hold:true,//默认为true，不监听
+				   release:true//默认为true，不监听
+			  	}
+			})
+		</script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="childpage-header-container">
+			<header class="childpage-header">
+				<i class="iconfont icon-guanbi icon-fanhui1" id="back"></i>
+				<span class="childpage-header-title">厂房出售</span>
+			</header>
+		</div>
+		<main id="app" v-cloak>
+			<div class="takePhoto">
+				<!-- banner BEGIN -->
+				<div class="swiper-container ndHandHouseDetail-banner">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" @click="sethouseImgFunc(-1)" v-if="housePhoto">
+							<img :src="domain+imgUrl" alt="">
+						</div>
+						<div class="swiper-slide" v-for="(item,index) in houseImgSrc" @click="sethouseImgFunc(index)" :key="index">
+							<img :src="item.img" alt=""><img src="img/takePhotoIndex.png" class="photoindex" v-if="item.cover == 1" />
+						</div>
+					</div>
+					<!-- 如果需要分页器 -->
+					<div class="swiper-pagination"></div>
+				</div>
+				<!-- banner END -->
+			</div>
+			<article class="borderArticle">
+				<h2 id="sss">房源基本信息</h2>
+				<ul>
+					<li @click="selectAreaFunc">
+						<span>地　　段</span>
+						<em>{{ village }}</em>
+						<i class="iconfont icon-qianjinjiantou"></i>
+					</li>
+					<li @click="selectHouseTypeFunc">
+						<span>类　　型</span>
+						<em>{{ genreValue }}</em>
+						<i class="iconfont icon-qianjinjiantou"></i>
+					</li>
+					<li>
+						<span>面　　积</span>
+						<input type="number" v-model="area" placeholder="请填写面积(单位:㎡)" class="nubInput" />
+						<i class="company">㎡</i>
+					</li>
+					<li>
+						<span>售　　价</span>
+						<input type="number" v-model="price" placeholder="请填写售价(单位:万元)" class="nubInput" />
+						<i class="company">万元</i>
+					</li>
+					<li @click="setStateFunc">
+						<span>当前状态</span>
+						<em>{{ diff==0?'经营中':'闲置中' }}</em>
+						<i class="iconfont icon-qianjinjiantou"></i>
+					</li>
+				</ul>
+			</article>
+
+			<article class="borderArticle">
+				<h2>房源详情</h2>
+				<div class="house-textarea">
+					<textarea placeholder="请在下栏描述您的房子" maxlength="2000" v-model="describe"></textarea>
+					<i class="iconfont icon-qingchu deletes" @click="delInput"></i>
+					<span class="notice">{{ inputnub }}/2000</span>
+				</div>
+			</article>
+
+			<article class="borderArticle mar-bot-none">
+				<h2>联系人</h2>
+				<ul>
+					<li>
+						<span>填写姓名</span>
+						<em @click="setnameFunc">{{ name }}</em>
+						<div class="btn">
+							<i v-bind:class="classObjectx" @click="setxsexFunc">先生</i>
+							<i v-bind:class="classObjectn" @click="setnsexFunc">女士</i>
+						</div>
+					</li>
+					<li>
+						<span>手机号码</span>
+						<input type="number" v-model="mobile" placeholder="请填写手机号" class="nubInput" @input="setphoneFunc"/>
+						<div class="btn">
+							<i id="iscode" class="yescode">已验证</i>
+						</div>
+					</li>
+					<li id="t-code" style="display: none;">
+						<span>验 证 码&nbsp;&nbsp;</span>
+						<input type="text" v-model="tcode" placeholder="请输入验证码" class="nubInput" />
+						<div class="btn">
+							<i id="is-code">未验证</i>
+						</div>
+					</li>
+				</ul>
+			</article>
+
+			<span class="orange-red-btn" @click="settsubmitFunc">确认修改</span>
+		</main>
+		<script src="./js/factorySaleEdit.js" charset="utf-8"></script>
+	</body>
+</html>

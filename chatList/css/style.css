@@ -1,0 +1,85 @@
+.chatList-fixed {
+	background-color: #fff;
+	color: #999999;
+}
+.border-container {
+	border-top: 0.266667rem solid #eee;
+	border-bottom: 0.266667rem solid #eee;
+}
+li {
+	box-sizing: border-box;
+	padding: 0.32rem 0.533333rem;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #eeeeee;
+}
+.border-container li:last-child {
+	border: none;
+}
+li .middle-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1.333333rem;
+    box-sizing: border-box;
+    padding: 0.08rem 0;
+    width: 5.733333rem;
+    font-size: 0.4rem;
+}
+li .middle-container h2 {
+	font-size: 0.453333rem;
+	color: #333;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+li .middle-container p {
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+li .img-container {
+	position: relative;
+	margin-right: 0.8rem;
+}
+li .img-container em {
+	display: block;
+	width: 0.4rem;
+	line-height: 0.4rem;
+	border-radius: 0.4rem;
+	background-color: red;
+	color: #fff;
+	font-size: 12px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	text-align: center;
+}
+li img {
+	display: block;
+	width: 1.333333rem;
+	height: 1.333333rem;
+	border-radius: 50%;
+	overflow: hidden;
+}
+li svg {
+	margin-right: 0.8rem;
+}
+li em {
+	margin-left: auto;
+}
+
+.noMessage {
+	position: fixed;
+	display: block;
+	width: 40%;
+	text-align: center;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 30%;
+	color: #eee;
+	font-size: 0.4rem;
+}

@@ -1,0 +1,20 @@
+html,body {
+	background-color: #fff;
+}
+h1 {
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+.agreement-container {
+	width: 92%;
+	margin: 0 auto;
+}
+pre {
+	width: 100%;
+	word-wrap: break-word;
+	white-space: normal;
+	padding-bottom: 40px;
+	font-size: 14px;
+	line-height: 20px;
+}

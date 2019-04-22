@@ -1,0 +1,40 @@
+.flex-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 0.2rem;
+}
+.flex-around {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+.text-hidden {
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.mySubscribeList {
+	font-size: 0.373333rem;
+	color: #999999;
+}
+.mySubscribeList>ul>li {
+	width: calc(100% - 0.4rem);
+	margin: 0.453333rem auto;
+	font-size: 0.373333rem;
+	color: #999999;
+	line-height: 0.8rem;
+	padding: 0.4rem 0.506667rem;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 0 2px 6px #f4dbdb
+}
+.mySubscribeList>ul>li>h2 {
+	font-size: 0.453333rem;
+	color: #333333;
+}

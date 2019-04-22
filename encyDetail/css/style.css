@@ -1,0 +1,37 @@
+.flex-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 0.2rem;
+}
+.flex-around {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+.text-hidden {
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.encyDetail h2 {
+	font-size: 0.453333rem;
+	color: #333333;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 0.4rem;
+	margin-bottom: 0.2rem;
+	max-width: 96%;
+	font-weight: bold;
+}
+.encyDetail .time {
+	text-align: center;
+	margin-bottom: 0.4rem;
+}
+.encyDetail .content {
+	max-width: 96%;
+	margin: 0 auto;
+}
